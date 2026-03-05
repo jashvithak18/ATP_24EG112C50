@@ -13,18 +13,6 @@ else {
     console.log(`${n2} is greater than ${n1}`)
 }
 
-//2.big number in 3 numbers
-//2
-let n3=67;
-if(n1>n2 && n1>n3){
-    console.log(`${n1} is greater than ${n2} and ${n3}`)
-}
-else if(n2>n1 && n2>n3){
-    console.log(`${n2} is greater than ${n1} and ${n3}`)
-}
-else{
-    console.log(`${n3} is greater than ${n1} and ${n2}`)
-}
 //3.sum of marks in [9,78,65,98]
 //3
 let marks=[90,78,65,98]
@@ -44,5 +32,6 @@ if(marks1[i]<min){
     console.log("min value is",min)
 }
  }
+
 
  

@@ -13,14 +13,6 @@ else {
     console.log(`${n2} is greater than ${n1}`)
 }
 
-//3.sum of marks in [9,78,65,98]
-//3
-let marks=[90,78,65,98]
-let sum=0
-for(let i=0;i<marks.length;i++){
-    sum=sum+marks[i]
-}
- console.log("sum is",sum)
 
  //4.smallest elememt in marks array
 //4
@@ -35,3 +27,4 @@ if(marks1[i]<min){
 
 
  
+

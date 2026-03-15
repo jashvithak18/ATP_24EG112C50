@@ -1,0 +1,58 @@
+ ### Register User
+POST http://localhost:5000/auth/users
+Content-Type:application/json
+
+ {
+ "firstName":"author2",
+ "lastName":"",
+ "email":"author2@gmail.com",
+ "password":"author2",
+ "role":"AUTHOR",
+ "profileImageUrl":""
+}
+
+###Author login
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "email":"author1@gmail.com",
+    "password":"author1"
+}
+
+###Author logout
+GET http://localhost:5000/auth/logout
+
+###create new article
+POST http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+    "author":"69b390cf92bf7d8bf60e3629",
+    "title":"article2 published by author1",
+    "category":"AI",
+    "content":"test article on AI"
+}
+
+###read own article
+GET http://localhost:5000/author-api/articles
+
+###update article
+PUT http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"69b3c81c3326f02cc94be2fb",
+    "title":"article2 published by author1",
+    "category":"AI",
+    "content":"test article on AI and updates"
+}
+
+###delete/restore article by id(soft delete)
+PATCH http://localhost:5000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"69b3c81c3326f02cc94be2fb",
+    "isArticleActive":true
+}

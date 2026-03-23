@@ -1,0 +1,20 @@
+h1{
+
+    text-align: center;
+}
+img{
+    display:block;
+    margin:auto;
+}
+h2{
+    color: darkred;
+}
+div{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+}
+body{
+    background-color: bisque;
+
+}

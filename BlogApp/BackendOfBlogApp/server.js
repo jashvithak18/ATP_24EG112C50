@@ -10,11 +10,13 @@ import cors from "cors"
 
 config();
 const app = exp()
-
+const cors=require("cors")
 //Middleware FIRST
 app.use(cors({
-  origin: true,
-  credentials: true,
+  origin: ["frontend-ashen-five-ros6kamkau.vercel.app",
+    "frontend-llj9svhtz-24eg112c50-anurageduis-projects.vercel.app"
+  ],
+  credentials: true
 }));
 app.use(exp.json());
 app.use(cookieParser());

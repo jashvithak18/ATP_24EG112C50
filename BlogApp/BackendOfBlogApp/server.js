@@ -13,7 +13,7 @@ const app = exp()
 
 //Middleware FIRST
 app.use(cors({
-  origin: "frontend-rlyk8wft0-24eg112c50-anurageduis-projects.vercel.app",
+  origin: true,
   credentials: true,
 }));
 app.use(exp.json());

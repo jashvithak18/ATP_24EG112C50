@@ -16,7 +16,7 @@ useEffect(() => {
   return (
     <div>
       <Header />
-      <div className="min-h-screen mx-32">
+     <div className="min-h-screen">
         <Outlet />
       </div>
       <Footer />

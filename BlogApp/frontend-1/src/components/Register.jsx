@@ -49,7 +49,7 @@ const navigate = useNavigate();
     try {
       setLoading(true);
       // make http post request to create user in the backend
-      const  res=await axios.post("https://atp-24eg112c38-2.onrender.com/auth/users",formData,{withCredentials:true});
+      const  res=await axios.post("https://backendblog-g3gv.onrender.com/auth/users",formData,{withCredentials:true});
 
       if(res.status===201){ 
         //navigate to login page

@@ -50,7 +50,7 @@ function ArticleByID() {
 
       try {
         const res = await axios.get(
-          `https://atp-24eg112c38-2.onrender.com/user-api/article/${id}`,
+          `https://backendblog-g3gv.onrender.com/user-api/article/${id}`,
           { withCredentials: true }
         );
 
@@ -84,7 +84,7 @@ function ArticleByID() {
 
     try {
       const res = await axios.patch(
-        `https://atp-24eg112c38-2.onrender.com/author-api/articles`,
+        `https://backendblog-g3gv.onrender.com/author-api/articles`,
         {
           articleId: article._id,
           isArticleActive: newStatus,
@@ -113,7 +113,7 @@ function ArticleByID() {
     commentObj.articleId = article._id;
 
     let res = await axios.put(
-      "https://atp-24eg112c38-2.onrender.com/user-api/articles",
+      "https://backendblog-g3gv.onrender.com/user-api/articles",
       commentObj,
       { withCredentials: true }
     );

@@ -43,7 +43,7 @@ function EditArticle() {
     modifiedArticle.articleId = article._id;
 
     let res = await axios.put(
-      "https://atp-24eg112c38-2.onrender.com/author-api/articles",
+      "https://backendblog-g3gv.onrender.com/author-api/articles",
       modifiedArticle,
       { withCredentials: true }
     );

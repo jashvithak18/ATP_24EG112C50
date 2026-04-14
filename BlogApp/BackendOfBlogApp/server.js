@@ -13,9 +13,7 @@ const app = exp()
 const cors=require("cors")
 //Middleware FIRST
 app.use(cors({
-  origin: ["blogfrontemd.vercel.app",
-    "blogfrontemd-rlvtfswtr-24eg112c50-anurageduis-projects.vercel.app"
-  ],
+  origin: "https://blogfrontemd.vercel.app",
   credentials: true
 }));
 app.use(exp.json());

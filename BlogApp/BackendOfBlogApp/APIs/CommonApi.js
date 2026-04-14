@@ -2,7 +2,7 @@ import exp from 'express';
 import { UserModel } from '../models/UserModel.js';
 import { hash, compare } from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { verifyToken } from '../middlewares/verifyToken.js';
+import { verifyToken } from '../middlewares/VerifyToken.js';
 import { upload } from '../config/multer.js';
 import { uploadToCloudinary } from '../config/cloudinaryUpload.js';
 import cloudinary from '../config/cloudinary.js';

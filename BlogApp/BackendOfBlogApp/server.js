@@ -24,6 +24,19 @@ app.use('/user-api', userApp);
 app.use('/author-api', authorApp);
 app.use('/admin-api', adminApp);
 app.use('/auth', commonApp);
+const connectDB = async () => {
+  try {
+    await connect(process.env.DB_URL);
+    console.log("connected to database");
+    const port = process.env.PORT || 5000;
+    app.listen(port, () => console.log(`server started on port ${port}`))
+  } catch (err) {
+    console.log("error in db connection", err);
+    process.exit(1); // 
+  }
+}
+
+connectDB();
 
 // 404 handler
 app.use((req, res, next) => {
@@ -47,17 +60,3 @@ app.use((err, req, res, next) => {
   }
   res.status(500).json({ message: "error occurred", error: "Server side error" });
 });
-
-// ✅ DB Connection and server start at the END
-const connectDB = async () => {
-  try {
-    await connect(process.env.DB_URL);
-    console.log("connected to database");
-    const port = process.env.PORT || 5000;
-    app.listen(port, () => console.log(`server started on port ${port}`))
-  } catch (err) {
-    console.log("error in db connection", err);
-  }
-}
-
-connectDB();

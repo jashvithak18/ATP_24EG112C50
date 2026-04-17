@@ -1,34 +1,32 @@
-import exp from "express";
-import { connect } from "mongoose";
-import { empRoute } from "./API/empApp.js";
-import cors from "cors";
+import exp from 'express';
+import { empApp } from './APIs/EmployeeAPI.js';
+import mongoose from 'mongoose';
+import cors from 'cors';
 
 const app = exp();
-//add cors middleware
-app.use(
-  cors({
-    origin: ["http://localhost:5173"],
-  }),
-);
-//body parser middleware
-app.use(exp.json());
-//emp api middleware
-app.use("/emp-api", empRoute);
 
-//DB connection
-const connectDB = async () => {
+app.use(cors());
+app.use(exp.json());
+
+app.use('/emp-api', empApp);
+
+async function connectDB() {
   try {
-    await connect("mongodb://localhost:27017/empdb");
-    console.log("DB connected");
-    app.listen(2000, () => console.log("server listening on port 2000.."));
+    await mongoose.connect(process.env.MONGO_URI);
+
+    const PORT = process.env.PORT || 2000;
+
+    app.listen(PORT, () => {
+      console.log(`server started on port ${PORT}`);
+    });
+
   } catch (err) {
-    console.log("err in DB connection", err.message);
+    console.log("error occured while connecting to dbase", err);
   }
-};
+}
 
 connectDB();
 
-//error handling middleware
 app.use((err, req, res, next) => {
   console.log("err in middleware:", err.message);
 
